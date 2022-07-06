@@ -7,6 +7,7 @@ var len=target.length;
 var matingpool=[];
 var ansNotfound=true;
 var smallTestHight=20;
+var bigTestHight=30;
 var best=".";
 var generation=0;
 
@@ -15,7 +16,8 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   createPopulation();
   background(220);
-  
+  smallTestHight=windowWidth<800? 15:24;
+  bigTestHight=windowWidth<800? 20:34;
 }
 
 function draw() {
@@ -53,7 +55,7 @@ function draw() {
   text("Population Size: "+population.length,30,2*height/5+100);
   text("Mutation Rate: "+mutationRate*100+"%",30,2*height/5+140);
   text("Generatin: "+generation,30,2*height/5+180);
-  textSize(34);
+  textSize(bigTestHight);
   text("Best: "+best.geneString(),30,2*height/5);
   
 }
